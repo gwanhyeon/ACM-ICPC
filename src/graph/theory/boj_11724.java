@@ -66,8 +66,6 @@ public class boj_11724 {
                     q.add(y);
                 }
             }
-
         }
-
     }
 }
