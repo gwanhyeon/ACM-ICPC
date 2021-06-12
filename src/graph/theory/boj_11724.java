@@ -3,13 +3,12 @@ package graph.theory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /**
  * 연결 요소의 개수 성공분류 Silver II
  * connected component
+ * https://www.acmicpc.net/problem/11724
  */
 public class boj_11724 {
     static List<List<Integer>> graphList;
@@ -35,7 +34,8 @@ public class boj_11724 {
         int answer = 0;
         for(int i=1; i<=n; i++){
             if(!isCheck[i]){
-                dfs(i);
+                bfs(i);
+                //dfs(i);
                 answer++;
             }
         }
@@ -50,5 +50,24 @@ public class boj_11724 {
                 dfs(y);
             }
         }
+    }
+
+    private static void bfs(int start){
+        Queue<Integer> q = new LinkedList<>();
+        isCheck[start] = true;
+        q.add(start);
+
+        while(!q.isEmpty()){
+            int x = q.poll();
+            for(int i=0; i<graphList.get(x).size(); i++){
+                int y = graphList.get(x).get(i);
+                if(!isCheck[y]){
+                    isCheck[y] = true;
+                    q.add(y);
+                }
+            }
+
+        }
+
     }
 }
