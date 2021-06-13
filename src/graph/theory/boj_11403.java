@@ -28,7 +28,6 @@ public class boj_11403{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st;
-
         map = new int[n][n];
         isCheck = new boolean[n];
 
@@ -38,6 +37,7 @@ public class boj_11403{
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
+
         for(int k=0; k<n; k++){
             for(int i=0; i<n; i++){
                 for(int j=0; j<n; j++){
