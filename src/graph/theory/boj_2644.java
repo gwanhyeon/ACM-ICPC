@@ -38,7 +38,6 @@ public class boj_2644 {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             graphList.get(a).add(b);
-            graphList.get(b).add(a);
         }
         dfs(x,y);
         if(isCheck[y] != 0){
